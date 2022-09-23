@@ -1,16 +1,16 @@
-# 6) [6 pts] Crie um programa que leia a pontuação de 16 participantes de um concurso. Em seguida, 
-# apresente a melhor e a 7° melhor nota.
-# OBS: Considere que as notas não se repetem e que o vetor não esta ordenado
+# 6) [6 pts] Crie um programa que leia a pontuaÃ§Ã£o de 16 participantes de um concurso. Em seguida, 
+# apresente a melhor e a 7Â° melhor nota.
+# OBS: Considere que as notas nÃ£o se repetem e que o vetor nÃ£o esta ordenado
 
 .data 
 	intro: .asciiz "Insira a nota: "
 	biggest: .asciiz "Maior :"
-	seventh: .asciiz "Sétima: "
+	seventh: .asciiz "SÃ©tima: "
 	break_line: .asciiz "\n"
 
 .text 
 
-	# armazena maior nota (como são notas, entao >= 0)
+	# armazena maior nota (como sÃ£o notas, entao >= 0)
 	move $t1, $zero 
 	
 	move $t2, $zero # age como contador  
