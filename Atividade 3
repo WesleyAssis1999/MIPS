@@ -1,27 +1,27 @@
-# 1) [4 pts] Ler a hora de inÌcio e a hora de fim de um jogo de Xadrez (considere apenas horas inteiras, sem 
-# os minutos) e calcule a duraÁ„o do jogo em horas, sabendo-se que o tempo m·ximo de duraÁ„o do jogo 
-# È de 24 horas e que o jogo pode iniciar em um dia e terminar no dia seguinte.
+# 1) [4 pts] Ler a hora de in√≠cio e a hora de fim de um jogo de Xadrez (considere apenas horas inteiras, sem 
+# os minutos) e calcule a dura√ß√£o do jogo em horas, sabendo-se que o tempo m√°ximo de dura√ß√£o do jogo 
+# √© de 24 horas e que o jogo pode iniciar em um dia e terminar no dia seguinte.
 
-# Trabalho de Arquitetura -> Wesley e Ot·vio Henrique Dias Sena
+# Trabalho de Arquitetura -> Wesley Assis
 
 .data 
-	# alocaÁ„o de memÛria para armazenamento de frases
+	# aloca√ß√£o de mem√≥ria para armazenamento de frases
 	inicio: .asciiz "Informe a hora inicial: "
 	fim: .asciiz "Informe a hora final: "
-	duracao: .asciiz "A duraÁ„o foi de: "
-	erro: .asciiz "\n[ERRO] tempo inv·lido"
+	duracao: .asciiz "A dura√ß√£o foi de: "
+	erro: .asciiz "\n[ERRO] tempo inv√°lido"
 .text
 
 	# ------------------ LEITURA E ENTRADA DE DADOS ----------------------
 	
-	li $t3, 24 # atribui hor·rio de referencia
+	li $t3, 24 # atribui hor√°rio de referencia
 	
 	# entrada de texto
 	li $v0, 4
 	la $a0, inicio
 	syscall # hora de entrada
 	
-	# entrada da hora de inÌcio:
+	# entrada da hora de in√≠cio:
 	li $v0, 5
 	syscall
 	move $t1, $v0  # move o valor do registrador v0 para t1  (valor lido)
@@ -37,17 +37,17 @@
 	
 	# ----------------- FIM DA LEITURA E ENTRADA DE DADOS --------------
 	
-	# encontrando o valor da hora, com base na diferenÁa:
+	# encontrando o valor da hora, com base na diferen√ßa:
 	ble $t2, $t1, diaSeguinte  # se a hora final for menor que t1 (proximo dia), exexuta diaSeguinte
 	diaNormal:
 	# se nao ultrapassar o dia atual:
 	sub $t1, $t2, $t1
 	j final
 		diaSeguinte:
-			# realiza a subtraÁ„o das horas, se o dia ultrapassa 24h
-			sub $t1, $t3, $t1  # subtrai 24h de t1 e a diferenca È acrescida a t2
+			# realiza a subtra√ß√£o das horas, se o dia ultrapassa 24h
+			sub $t1, $t3, $t1  # subtrai 24h de t1 e a diferenca √© acrescida a t2
 			add $t1, $t2, $t1
-			ble $t1, $t3, final  # verifica se o resultado È maior q 24, se for, da erro
+			ble $t1, $t3, final  # verifica se o resultado √© maior q 24, se for, da erro
 			# se for maior q 24:
 			li $v0, 4
 			la $a0, erro
