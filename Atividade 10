@@ -1,15 +1,15 @@
-# Trabalho Pr·tico 3 (10 pts) - Praticando condiÁıes em MIPS [Entrega dia 05/06/2022]
-# Imagine que vocÍ est· fazendo uma compra no mercado, e vocÍ possui em sua carteira, 100 reais, 
-# com a seguinte combinaÁ„o de cÈdulas:
+# Trabalho Pr√°tico 3 (10 pts) - Praticando condi√ß√µes em MIPS 
+# Imagine que voc√™ est√° fazendo uma compra no mercado, e voc√™ possui em sua carteira, 100 reais, 
+# com a seguinte combina√ß√£o de c√©dulas:
 
-# 2 cÈdulas de R$ 20,00
-# 3 cÈdulas de R$ 10,00
-# 2 cÈdulas de R$ 5,00
-# 5 cÈdulas de R$ 2,00
+# 2 c√©dulas de R$ 20,00
+# 3 c√©dulas de R$ 10,00
+# 2 c√©dulas de R$ 5,00
+# 5 c√©dulas de R$ 2,00
 # 10 moedas de R$ 1,00
 # Elabore um programa em MIPS, utilizando o simulador MARS (apresentado em sala de aula), 
-# para receber um valor da sua compra (valor INTEIRO), e em seguida calcule e informe o n˙mero MÕNIMO NECESS¡RIO DE CADA cÈdula/moeda
-# para pagar a referida compra. Caso a compra exceda o valor disponÌvel na carteira, deve ser apresentada uma mensagem
+# para receber um valor da sua compra (valor INTEIRO), e em seguida calcule e informe o n√∫mero M√çNIMO NECESS√ÅRIO DE CADA c√©dula/moeda
+# para pagar a referida compra. Caso a compra exceda o valor dispon√≠vel na carteira, deve ser apresentada uma mensagem
 # de erro indicando o ocorrido.
 
 # Ex 1:
@@ -40,18 +40,18 @@ message1: .asciiz "\n Qual o valor da compra? :\n"
 
 .text
 main:
-	li $v0,4 #comando de impress„o de inteiro na tela
+	li $v0,4 #comando de impress√£o de inteiro na tela
 	la $a0, $message1 #coloca o texto da compra para ser impresso
 	syscall # efetua a chamada ao sistema
 	
-	li $v0, 5 #le entrada do usu·rio
+	li $v0, 5 #le entrada do usu√°rio
 	syscall #faz chamada ao sistema
 	
-	move $s2, $v0 # move conte˙do de $v0 para $s2
+	move $s2, $v0 # move conte√∫do de $v0 para $s2
 	
 
         divisaoOp:
-	li $v0,4 #comando de impress„o de inteiro na tela
+	li $v0,4 #comando de impress√£o de inteiro na tela
 	la $a0, $divisao #coloca o texto divisao para ser impresso
 	syscall # efetua a chamada ao sistema
 
@@ -59,7 +59,7 @@ main:
 	j termina #desvia para termina
 	
         termina:
-	li $v0,1 #comando de impress„o de inteiro na tela
+	li $v0,1 #comando de impress√£o de inteiro na tela
 	la $a0, ($s2) #coloca o registrador $s2 para ser impresso
 	syscall # efetua a chamada ao sistema
 	
