@@ -1,9 +1,9 @@
-# 4) [7 pts] Elabore um algoritmo que seja capaz de imprimir a série como mostrada abaixo. Como entrada 
-# deste algoritmo o usuário deve informar um número inteiro. A saída do algoritmo deve produzir uma 
-# série com o mesmo padrão do exemplo logo abaixo. O limite para a série é o valor informado pelo 
-# usuário (veja o exemplo abaixo):
+# 4) [7 pts] Elabore um algoritmo que seja capaz de imprimir a sÃ©rie como mostrada abaixo. Como entrada 
+# deste algoritmo o usuÃ¡rio deve informar um nÃºmero inteiro. A saÃ­da do algoritmo deve produzir uma 
+# sÃ©rie com o mesmo padrÃ£o do exemplo logo abaixo. O limite para a sÃ©rie Ã© o valor informado pelo 
+# usuÃ¡rio (veja o exemplo abaixo):
 
-# Trabalho de Arquitetura -> Wesley Elbert Assis e Otávio Henrique Dias Sena
+# Trabalho de Arquitetura -> Wesley Assis
 
 #       7
 #      76
@@ -31,12 +31,12 @@
 	syscall
 	move $t1, $v0    # valor do registrador de input passa para t1
 	move $t3, $zero  # contador
-	move $t6, $v0  # t6 é uma constante
+	move $t6, $v0  # t6 Ã© uma constante
 	move $t7, $t1
 	# imprime a ponta
 	 
 	loop:
-		# decrescente em relação aos espaços.
+		# decrescente em relaÃ§Ã£o aos espaÃ§os.
 		li $v0, 4 
 		la $a0, white_space
 		syscall 
