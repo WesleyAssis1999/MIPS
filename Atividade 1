@@ -1,30 +1,30 @@
-#Desenvolva um programa (em MIPS) que CALCULE a soma de TODOS OS NÚMEROS PRIMOS dentro de um intervalo informado pelo usuário.
-# Para tal, sua solução deve permitir que o usuário INFORME DOIS valores inteiros, representando respectivamente o limite inferior 
+#Desenvolva um programa (em MIPS) que CALCULE a soma de TODOS OS NÃšMEROS PRIMOS dentro de um intervalo informado pelo usuÃ¡rio.
+# Para tal, sua soluÃ§Ã£o deve permitir que o usuÃ¡rio INFORME DOIS valores inteiros, representando respectivamente o limite inferior 
 # e o limite superior.
 
 
 # Entrada:
 # 2
 # 10
-# Saída:
+# SaÃ­da:
 # 17
 #**************************************************************
 # Ex2:
 # Entrada:
 # 20
 # 69
-# Saída:
+# SaÃ­da:
 # 491
 # **************************************************************
 #Ex3:
 # Entrada:
 # 100
 # 149
-# Saída:
+# SaÃ­da:
 # 1216
 
 # Nome: Wesley Elbert Assis
-# Disciplina: Arquitetura e Organização de Computadores.
+# Disciplina: Arquitetura e OrganizaÃ§Ã£o de Computadores.
 
 
 .data 
@@ -37,7 +37,7 @@
 	"\n"
 
 .text 
-	# primeira interação com o usuário
+	# primeira interaÃ§Ã£o com o usuÃ¡rio
 	li $v0, 4
 	la $a0, message 
 	syscall 
@@ -51,7 +51,7 @@
 	syscall 
 	
 	
-	# segunda interação com o usuário
+	# segunda interaÃ§Ã£o com o usuÃ¡rio
 	li $v0, 4
 	la $a0, message 
 	syscall 
@@ -81,7 +81,7 @@
 		sum: 
 		    add $t6, $t6, $t5 # somando ao registrador t6, o numero primo
 		passarPara:
-		# se nao, ignora a condição
+		# se nao, ignora a condiÃ§Ã£o
 		li $t4, 0             # resetando o registrador t4
 		addi $t5, $t5, 1      # soma mais 1 ao registrador inicial
 		ble $t5, $t2, while   # se t5 for menor que t2, volta ao loop
