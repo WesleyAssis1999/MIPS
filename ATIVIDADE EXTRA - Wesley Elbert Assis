@@ -1,0 +1,93 @@
+#Desenvolva um programa (em MIPS) que CALCULE a soma de TODOS OS NÚMEROS PRIMOS dentro de um intervalo informado pelo usuário.
+# Para tal, sua solução deve permitir que o usuário INFORME DOIS valores inteiros, representando respectivamente o limite inferior 
+# e o limite superior.
+
+
+# Entrada:
+# 2
+# 10
+# Saída:
+# 17
+#**************************************************************
+# Ex2:
+# Entrada:
+# 20
+# 69
+# Saída:
+# 491
+# **************************************************************
+#Ex3:
+# Entrada:
+# 100
+# 149
+# Saída:
+# 1216
+
+# Nome: Wesley Elbert Assis
+# Disciplina: Arquitetura e Organização de Computadores.
+
+
+.data 
+	message:
+	.asciiz 
+	"Informe um numero: "
+	
+	breakl:
+	.asciiz 
+	"\n"
+
+.text 
+	# primeira interação com o usuário
+	li $v0, 4
+	la $a0, message 
+	syscall 
+	
+	li $v0, 5 
+	syscall
+	move $t5, $v0   # movendo o valor do registrador v0 para t5
+	
+	li $v0, 4
+	la $a0, breakl 
+	syscall 
+	
+	
+	# segunda interação com o usuário
+	li $v0, 4
+	la $a0, message 
+	syscall 
+	
+	li $v0, 5 
+	syscall
+	move $t2, $v0  # movendo o valor do registrador v0 para t2
+	
+	li $t3, 1      # O contador t3 recebe 1 
+	li $t4, 0      # soma dos contadores
+	li $t6, 0      # contabiliza os primos,somados
+	while:
+		div $t1, $t5, $t3     # dividindo t1 por t3
+		mfhi $t1              # movendo o resto do registrador hi para t5
+		beq $t1, $zero, count # se o resto for zero, vai para o contador
+		j passe 
+		count:
+		    addi $t4, $t4, 1  # somando 1 ao registrador t4
+		passe:
+		    # ignora
+		addi $t3, $t3, 1      # somando 1 ao registrador t3 para correr o loop
+		ble $t3, $t5, while   # se t3 for menor ou igual a t5, volta para o loop
+		li $t3, 1             # resetando o registrador
+				
+		ble $t4, 2, sum       # se o contador for menor ou igual a 2, vai para a soma
+		j passarPara
+		sum: 
+		    add $t6, $t6, $t5 # somando ao registrador t6, o numero primo
+		passarPara:
+		# se nao, ignora a condição
+		li $t4, 0             # resetando o registrador t4
+		addi $t5, $t5, 1      # soma mais 1 ao registrador inicial
+		ble $t5, $t2, while   # se t5 for menor que t2, volta ao loop
+	
+	# exibindo a soma
+	li $v0, 1
+	move $a0, $t6
+	syscall
+	
