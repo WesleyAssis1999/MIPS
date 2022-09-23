@@ -1,16 +1,16 @@
-# 5) [5 pts] Construa um algoritmo que receba um número e verifique se ele é um número triangular (SIM 
-# ou NAO). Um número é triangular quando é resultado do produto de três números consecutivos.
+# 5) [5 pts] Construa um algoritmo que receba um nÃºmero e verifique se ele Ã© um nÃºmero triangular (SIM 
+# ou NAO). Um nÃºmero Ã© triangular quando Ã© resultado do produto de trÃªs nÃºmeros consecutivos.
 # EX:
-# ? Entrada do usuário: 24
-# ? Saída: SIM
-# Obs: Veja que 24 pode ser obtido a partir da multiplicação dos número 2 x 3 x 4 = 24
+# ? Entrada do usuÃ¡rio: 24
+# ? SaÃ­da: SIM
+# Obs: Veja que 24 pode ser obtido a partir da multiplicaÃ§Ã£o dos nÃºmero 2 x 3 x 4 = 24
 
-# Trabalho de Arquitetura -> Wesley Elbert Assis e Otávio Henrique Dias Sena
+# Trabalho de Arquitetura -> Wesley Assis
 
 .data 
-	intro: .asciiz "Insira o número: " 
+	intro: .asciiz "Insira o nÃºmero: " 
 	yes: .asciiz "Sim" 
-	no: .asciiz "Nâo" 
+	no: .asciiz "NÃ¢o" 
 
 .text 
 
